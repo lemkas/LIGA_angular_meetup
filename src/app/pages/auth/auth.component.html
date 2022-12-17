@@ -1,0 +1,8 @@
+<form class="auth-form" (submit)="onSubmit()" [formGroup]="authForm">
+  <input type="text" formControlName="email" />
+  <input type="password" formControlName="password" />
+  <div class="buttons">
+    <a href="#">Create account</a>
+    <button type="submit">Log In</button>
+  </div>
+</form>
