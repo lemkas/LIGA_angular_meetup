@@ -19,7 +19,7 @@ export class AuthService {
         map((res) => {
           if (res.token) {
             localStorage.setItem('del_todos_auth_token', res.token);
-            // this.routes.navigate(['todos']);
+            this.routes.navigate(['meetups']);
             console.log(res);
           }
 
