@@ -12,6 +12,6 @@ export class MeetupService {
 
   getAll() {
     console.log(this.baseUrl);
-    return this.http.get<IMeetup[]>(this.baseUrl);
+    return this.http.get<any>(this.baseUrl);
   }
 }

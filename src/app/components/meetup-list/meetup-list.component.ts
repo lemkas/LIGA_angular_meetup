@@ -8,10 +8,13 @@ import { MeetupService } from 'src/app/services/meetup.service';
   styleUrls: ['./meetup-list.component.scss'],
 })
 export class MeetupListComponent implements OnInit {
-  meetups!: any;
+  meetups: IMeetup[] = [];
   constructor(private meetupService: MeetupService) {}
 
   ngOnInit(): void {
-    this.meetups = this.meetupService.getAll().subscribe();
+    this.meetupService.getAll().subscribe((meetups) => {
+      this.meetups = meetups;
+      console.log(this.meetups);
+    });
   }
 }

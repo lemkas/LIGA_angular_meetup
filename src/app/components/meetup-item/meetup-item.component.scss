@@ -1,25 +1,11 @@
-.meetup-item {
-  display: flex;
-  flex-direction: column;
-  padding: 5px;
-  border: 1px solid rgb(14, 14, 255);
-}
-
-.meetup-item > * {
-  margin-bottom: 5px;
-}
-
-.header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.card {
+  width: 600px;
+  background-color: rgb(255, 204, 255);
+  margin-bottom: 10px;
 }
 
 .footer {
   display: flex;
   justify-content: space-between;
-}
-
-.footer > .buttons {
-  display: flex;
+  align-items: baseline;
 }

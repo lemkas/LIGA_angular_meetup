@@ -2,6 +2,7 @@ import { IUser } from './user';
 
 export interface IMeetup {
   id: number;
+  name: string;
   description: string;
   location: string;
   target_audience: string;

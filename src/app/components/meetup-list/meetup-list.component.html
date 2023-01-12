@@ -1,1 +1,5 @@
 <div class="meetup-list">Meetups</div>
+<app-meetup-item
+  *ngFor="let meetup of meetups"
+  [meetup]="meetup"
+></app-meetup-item>

@@ -5,6 +5,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MeetupsComponent } from './pages/meetups/meetups.component';
 import { MeetupItemComponent } from './components/meetup-item/meetup-item.component';
 import { MeetupListComponent } from './components/meetup-list/meetup-list.component';
+import { MatCardModule } from '@angular/material/card';
+import { CommonModule } from '@angular/common';
 
 const routes: Routes = [
   { path: '', component: AuthComponent },
@@ -12,7 +14,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), ReactiveFormsModule],
+  imports: [
+    RouterModule.forRoot(routes),
+    ReactiveFormsModule,
+    MatCardModule,
+    CommonModule,
+  ],
   declarations: [
     AuthComponent,
     MeetupItemComponent,
