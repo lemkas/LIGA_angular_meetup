@@ -11,13 +11,12 @@ export class NavbarComponent implements OnInit {
   token!: string | null;
   getToken() {
     this.token = this.authService.getToken();
-    console.log('token', this.token);
   }
 
   ngOnInit(): void {
     setInterval(() => {
       this.getToken();
-    }, 500);
+    }, 100);
   }
 
   logoutHandler() {

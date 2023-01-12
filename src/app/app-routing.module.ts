@@ -8,13 +8,12 @@ import { MeetupListComponent } from './components/meetup-list/meetup-list.compon
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { CommonModule } from '@angular/common';
-import { MyMeetupsComponent } from './pages/my-meetups/my-meetups.component';
 import { AdminComponent } from './pages/admin/admin.component';
 
 const routes: Routes = [
   { path: '', component: AuthComponent },
   { path: 'meetups', component: MeetupsComponent },
-  { path: 'my-meetups', component: MyMeetupsComponent },
+  { path: 'my-meetups', component: MeetupsComponent },
   { path: 'users', component: AdminComponent },
 ];
 
@@ -31,7 +30,6 @@ const routes: Routes = [
     MeetupItemComponent,
     MeetupListComponent,
     MeetupsComponent,
-    MyMeetupsComponent,
   ],
   exports: [RouterModule],
 })

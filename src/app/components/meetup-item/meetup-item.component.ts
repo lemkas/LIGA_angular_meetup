@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { IMeetup } from 'src/app/model/meetup';
+import { IUser } from 'src/app/model/user';
 
 @Component({
   selector: 'app-meetup-item',
@@ -8,10 +9,16 @@ import { IMeetup } from 'src/app/model/meetup';
 })
 export class MeetupItemComponent implements OnInit {
   @Input() meetup!: IMeetup;
+  @Input() userInfo!: IUser | null;
+  ownerFlag!: boolean;
   showMore: boolean = false;
   constructor() {}
-
-  ngOnInit(): void {}
+  checkMeetupOwner() {
+    this.ownerFlag = this.meetup.createdBy === this.userInfo?.id;
+  }
+  ngOnInit(): void {
+    this.checkMeetupOwner();
+  }
 
   showMoreHandler() {
     this.showMore = !this.showMore;

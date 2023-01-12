@@ -9,15 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./meetups.component.scss'],
 })
 export class MeetupsComponent implements OnInit {
-  meetups: IMeetup[] = [];
-  constructor(
-    private meetupService: MeetupService,
-    private authService: AuthService
-  ) {}
+  constructor() {}
 
-  ngOnInit(): void {
-    this.meetupService.getAll().subscribe((meetups) => {
-      this.meetups = meetups;
-    });
-  }
+  ngOnInit(): void {}
 }
