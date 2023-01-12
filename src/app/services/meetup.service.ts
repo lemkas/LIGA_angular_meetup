@@ -14,4 +14,8 @@ export class MeetupService {
   getAll(): Observable<IMeetup[]> {
     return this.http.get<any>(this.baseUrl);
   }
+
+  createMeetup(data: any) {
+    return this.http.post(this.baseUrl, data);
+  }
 }
