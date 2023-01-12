@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { map } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { IAuthData } from '../model/auth';
+import { IUser } from '../model/user';
 
 @Injectable({
   providedIn: 'root',
@@ -26,6 +27,29 @@ export class AuthService {
           return;
         })
       );
+  }
+
+  parseJwt(token: string) {
+    let base64Url = token.split('.')[1];
+    let base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    let jsonPayload = decodeURIComponent(
+      window
+        .atob(base64)
+        .split('')
+        .map(function (c) {
+          return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        })
+        .join('')
+    );
+    return JSON.parse(jsonPayload);
+  }
+
+  public get user(): IUser | null {
+    const token = this.getToken();
+    if (token) {
+      const user: IUser = this.parseJwt(token);
+      return user;
+    } else return null;
   }
 
   getToken(): string | null {
