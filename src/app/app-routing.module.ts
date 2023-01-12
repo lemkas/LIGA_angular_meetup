@@ -7,10 +7,15 @@ import { MeetupItemComponent } from './components/meetup-item/meetup-item.compon
 import { MeetupListComponent } from './components/meetup-list/meetup-list.component';
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
+import { MyMeetupsComponent } from './pages/my-meetups/my-meetups.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 const routes: Routes = [
   { path: '', component: AuthComponent },
   { path: 'meetups', component: MeetupsComponent },
+  { path: 'my-meetups', component: MyMeetupsComponent },
+  { path: 'users', component: AdminComponent },
 ];
 
 @NgModule({

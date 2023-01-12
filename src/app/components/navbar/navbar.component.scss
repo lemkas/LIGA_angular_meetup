@@ -1,0 +1,26 @@
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+  width: 400px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.navbar-item {
+  list-style: none;
+}
+
+.navbar-item > a {
+  text-decoration: none;
+  color: black;
+}
+
+img {
+  width: 30px;
+  margin-left: 15px;
+  cursor: pointer;
+}

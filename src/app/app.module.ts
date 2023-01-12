@@ -7,9 +7,11 @@ import { AppComponent } from './app.component';
 import { MeetupItemComponent } from './components/meetup-item/meetup-item.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JwtInterceptorInterceptor } from './interceptors/jwt-interceptor.interceptor';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { MyMeetupsComponent } from './pages/my-meetups/my-meetups.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, NavbarComponent, MyMeetupsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
