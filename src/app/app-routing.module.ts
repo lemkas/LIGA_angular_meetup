@@ -9,12 +9,17 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { CommonModule } from '@angular/common';
 import { AdminComponent } from './pages/admin/admin.component';
+import { MatButtonModule } from '@angular/material/button';
+import { CreateMeetupComponent } from './pages/create-meetup/create-meetup.component';
+import { CreateFormComponent } from './components/create-form/create-form.component';
+import { MatInputModule } from '@angular/material/input';
 
 const routes: Routes = [
   { path: '', component: AuthComponent },
   { path: 'meetups', component: MeetupsComponent },
   { path: 'my-meetups', component: MeetupsComponent },
   { path: 'users', component: AdminComponent },
+  { path: 'meetups/create', component: CreateMeetupComponent },
 ];
 
 @NgModule({
@@ -23,6 +28,8 @@ const routes: Routes = [
     ReactiveFormsModule,
     MatCardModule,
     MatTableModule,
+    MatButtonModule,
+    MatInputModule,
     CommonModule,
   ],
   declarations: [
@@ -30,6 +37,8 @@ const routes: Routes = [
     MeetupItemComponent,
     MeetupListComponent,
     MeetupsComponent,
+    CreateMeetupComponent,
+    CreateFormComponent,
   ],
   exports: [RouterModule],
 })

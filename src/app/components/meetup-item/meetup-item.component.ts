@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+
 import { IMeetup } from 'src/app/model/meetup';
 import { IUser } from 'src/app/model/user';
 

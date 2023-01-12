@@ -1,4 +1,6 @@
-<div class="meetup-list">Meetups</div>
+<button mat-raised-button color="accent" (click)="createMeetupHandler()">
+  Create meetup
+</button>
 <app-meetup-item
   *ngFor="let meetup of meetups"
   [meetup]="meetup"

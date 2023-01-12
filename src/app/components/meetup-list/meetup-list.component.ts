@@ -19,6 +19,10 @@ export class MeetupListComponent implements OnInit {
     private router: Router
   ) {}
 
+  createMeetupHandler() {
+    this.router.navigate(['meetups/create']);
+  }
+
   getMeetups() {
     this.userInfo = this.authService.user;
     if (this.router.url.includes('my-meetups')) {

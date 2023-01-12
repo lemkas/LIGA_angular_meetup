@@ -8,6 +8,7 @@ import { MeetupItemComponent } from './components/meetup-item/meetup-item.compon
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JwtInterceptorInterceptor } from './interceptors/jwt-interceptor.interceptor';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { CreateFormComponent } from './components/create-form/create-form.component';
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent], // здесь был MyMeetupsComponent

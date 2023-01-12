@@ -25,6 +25,5 @@ export class AuthComponent implements OnInit {
 
   onSubmit() {
     this.authService.login(this.authForm.value).subscribe();
-    console.log(this.authService.getToken());
   }
 }

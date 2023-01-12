@@ -10,6 +10,7 @@
     <p>Что нужно знать: {{ meetup.need_to_know }}</p>
     <p>Что будет показано: {{ meetup.will_happen }}</p>
     <p>Причина прийти: {{ meetup.reason_to_come }}</p>
+    <p>Дата: {{ meetup.time | date : "dd.MM.yyyy hh:mm" }}</p>
   </mat-card-content>
   <mat-card-footer class="footer">
     <mat-card-subtitle>

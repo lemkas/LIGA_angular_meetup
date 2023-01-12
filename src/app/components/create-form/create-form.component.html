@@ -1,0 +1,55 @@
+<form class="create-form" [formGroup]="createForm" (submit)="onSubmit()">
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name" required />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Meet date:</mat-label>
+    <input matInput formControlName="time" type="date" required />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Meet time:</mat-label>
+    <input matInput formControlName="hours" type="time" required />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Duration, min:</mat-label>
+    <input matInput formControlName="duration" type="number" required />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Location:</mat-label>
+    <input matInput formControlName="location" required />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Description:</mat-label>
+    <textarea
+      matInput
+      rows="3"
+      formControlName="description"
+      required
+    ></textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Target audience:</mat-label>
+    <input matInput formControlName="target_audience" required />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Need to know:</mat-label>
+    <input matInput formControlName="need_to_know" required />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Will happen:</mat-label>
+    <input matInput formControlName="will_happen" required />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Reason to come:</mat-label>
+    <input matInput formControlName="reason_to_come" required />
+  </mat-form-field>
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="createForm.invalid"
+  >
+    Create
+  </button>
+</form>
