@@ -6,10 +6,10 @@ import { MeetupsComponent } from './pages/meetups/meetups.component';
 import { MeetupItemComponent } from './components/meetup-item/meetup-item.component';
 import { MeetupListComponent } from './components/meetup-list/meetup-list.component';
 import { MatCardModule } from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
 import { CommonModule } from '@angular/common';
 import { MyMeetupsComponent } from './pages/my-meetups/my-meetups.component';
 import { AdminComponent } from './pages/admin/admin.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 
 const routes: Routes = [
   { path: '', component: AuthComponent },
@@ -23,6 +23,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     ReactiveFormsModule,
     MatCardModule,
+    MatTableModule,
     CommonModule,
   ],
   declarations: [
@@ -30,6 +31,7 @@ const routes: Routes = [
     MeetupItemComponent,
     MeetupListComponent,
     MeetupsComponent,
+    MyMeetupsComponent,
   ],
   exports: [RouterModule],
 })

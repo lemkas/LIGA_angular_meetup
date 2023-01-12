@@ -18,9 +18,6 @@ export class MeetupsComponent implements OnInit {
   ngOnInit(): void {
     this.meetupService.getAll().subscribe((meetups) => {
       this.meetups = meetups;
-      console.log(this.meetups);
     });
-
-    console.log(this.authService.user);
   }
 }

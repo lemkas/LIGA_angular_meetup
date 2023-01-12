@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { filter, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { IMeetup } from '../model/meetup';
 
@@ -10,8 +11,7 @@ export class MeetupService {
   private baseUrl: string = `${environment.backendOrigin}/meetup`;
   constructor(private http: HttpClient) {}
 
-  getAll() {
-    console.log(this.baseUrl);
+  getAll(): Observable<IMeetup[]> {
     return this.http.get<any>(this.baseUrl);
   }
 }
