@@ -29,6 +29,10 @@ export class AuthService {
       );
   }
 
+  createUser(user: IUser) {
+    return this.http.post(`${this.baseUrl}/registration`, user);
+  }
+
   parseJwt(token: string) {
     let base64Url = token.split('.')[1];
     let base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');

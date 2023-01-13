@@ -1,1 +1,54 @@
-<p>few</p>
+<form
+  class="create-form"
+  [formGroup]="createForm"
+  *ngIf="showForm"
+  (submit)="onSubmit()"
+>
+  <mat-form-field class="form-item">
+    <input matInput formControlName="email" placeholder="Email" required />
+  </mat-form-field>
+  <mat-form-field class="form-item">
+    <input
+      matInput
+      formControlName="password"
+      placeholder="Password"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field class="form-item">
+    <input matInput formControlName="fio" placeholder="FIO" required />
+  </mat-form-field>
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="createForm.invalid"
+  >
+    Create
+  </button>
+  <button mat-raised-button color="warn" (click)="showFormToggle()">
+    Close
+  </button>
+</form>
+<button
+  mat-raised-button
+  color="primary"
+  *ngIf="!showForm"
+  (click)="showFormToggle()"
+>
+  Create
+</button>
+<table class="user-list">
+  <tr>
+    <td>Email</td>
+    <td>Password</td>
+    <td>FIO</td>
+    <td>Actions</td>
+  </tr>
+  <app-user-item
+    *ngFor="let user of users"
+    [user]="user"
+    (deleteUserHandler)="deleteUser($event)"
+    (updateUserHandler)="editUser($event)"
+  ></app-user-item>
+</table>

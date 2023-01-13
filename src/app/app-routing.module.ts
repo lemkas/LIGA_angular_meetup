@@ -13,6 +13,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { CreateMeetupComponent } from './pages/create-meetup/create-meetup.component';
 import { CreateFormComponent } from './components/create-form/create-form.component';
 import { MatInputModule } from '@angular/material/input';
+import { UserListComponent } from './components/user-list/user-list.component';
+import { UserItemComponent } from './components/user-item/user-item.component';
 
 const routes: Routes = [
   { path: '', component: AuthComponent },
@@ -39,6 +41,9 @@ const routes: Routes = [
     MeetupsComponent,
     CreateMeetupComponent,
     CreateFormComponent,
+    AdminComponent,
+    UserListComponent,
+    UserItemComponent,
   ],
   exports: [RouterModule],
 })

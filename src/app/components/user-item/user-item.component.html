@@ -1,1 +1,41 @@
-<p>user-item works!</p>
+<tr *ngIf="!showForm">
+  <td>{{ user.email }}</td>
+  <td>{{ user.password }}</td>
+  <td>{{ user.fio }}</td>
+  <td>
+    <button (click)="showFormToggle()">Edit</button>
+    <button (click)="deletedUser(user.id)">Delete</button>
+  </td>
+</tr>
+<form
+  class="create-form"
+  [formGroup]="createForm"
+  *ngIf="showForm"
+  (submit)="editedUser()"
+>
+  <mat-form-field class="form-item">
+    <input matInput formControlName="email" placeholder="Email" required />
+  </mat-form-field>
+  <mat-form-field class="form-item">
+    <input
+      matInput
+      formControlName="password"
+      placeholder="Password"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field class="form-item">
+    <input matInput formControlName="fio" placeholder="FIO" required />
+  </mat-form-field>
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="createForm.invalid"
+  >
+    Update
+  </button>
+  <button mat-raised-button color="warn" (click)="showFormToggle()">
+    Cancel
+  </button>
+</form>
