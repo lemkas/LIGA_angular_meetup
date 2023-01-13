@@ -13,6 +13,8 @@ export class NavbarComponent implements OnInit {
     this.token = this.authService.getToken();
   }
 
+  isAdmin() {}
+
   ngOnInit(): void {
     setInterval(() => {
       this.getToken();

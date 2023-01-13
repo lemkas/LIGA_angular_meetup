@@ -43,7 +43,7 @@ export class MeetupListComponent implements OnInit {
   refreshMeetups() {
     this.subscription = this.meetupService.reloadMeetups.subscribe((value) => {
       this.meetups = value;
-      console.log(value, 'from reloader');
+      console.log(this.meetups, 'from reloader');
     });
     this.meetupService.refreshMeetups();
   }

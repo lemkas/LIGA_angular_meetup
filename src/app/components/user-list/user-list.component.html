@@ -32,6 +32,7 @@
 </form>
 <button
   mat-raised-button
+  class="create-button"
   color="primary"
   *ngIf="!showForm"
   (click)="showFormToggle()"
@@ -39,12 +40,6 @@
   Create
 </button>
 <table class="user-list">
-  <tr>
-    <td>Email</td>
-    <td>Password</td>
-    <td>FIO</td>
-    <td>Actions</td>
-  </tr>
   <app-user-item
     *ngFor="let user of users"
     [user]="user"

@@ -17,12 +17,18 @@ import { UserListComponent } from './components/user-list/user-list.component';
 import { UserItemComponent } from './components/user-item/user-item.component';
 import { AuthGuard } from './guards/auth.guard';
 import { AdminGuard } from './guards/admin.guard';
+import { InstructionComponent } from './pages/instruction/instruction.component';
 
 const routes: Routes = [
   { path: '', component: AuthComponent },
+  { path: 'instraction', component: InstructionComponent },
   { path: 'meetups', component: MeetupsComponent, canActivate: [AuthGuard] },
   { path: 'my-meetups', component: MeetupsComponent, canActivate: [AuthGuard] },
-  { path: 'users', component: AdminComponent, canActivate: [AdminGuard] },
+  {
+    path: 'users',
+    component: AdminComponent,
+    canActivate: [AdminGuard, AuthGuard],
+  },
   {
     path: 'meetups/create',
     component: CreateMeetupComponent,
@@ -50,6 +56,7 @@ const routes: Routes = [
     AdminComponent,
     UserListComponent,
     UserItemComponent,
+    InstructionComponent,
   ],
   exports: [RouterModule],
 })
