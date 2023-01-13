@@ -6,11 +6,11 @@
     >
   </mat-card-header>
   <mat-card-content *ngIf="showMore">
-    <p>Целевая аудитория: {{ meetup.target_audience }}</p>
-    <p>Что нужно знать: {{ meetup.need_to_know }}</p>
-    <p>Что будет показано: {{ meetup.will_happen }}</p>
-    <p>Причина прийти: {{ meetup.reason_to_come }}</p>
-    <p>Дата: {{ meetup.time | date : "dd.MM.yyyy hh:mm" }}</p>
+    <p><strong>Целевая аудитория:</strong> {{ meetup.target_audience }}</p>
+    <p><strong>Что нужно знать:</strong> {{ meetup.need_to_know }}</p>
+    <p><strong>Что будет показано:</strong> {{ meetup.will_happen }}</p>
+    <p><strong>Причина прийти:</strong> {{ meetup.reason_to_come }}</p>
+    <p><strong>Дата:</strong> {{ meetup.time | date : "dd.MM.yyyy hh:mm" }}</p>
   </mat-card-content>
   <mat-card-footer class="footer">
     <mat-card-subtitle>

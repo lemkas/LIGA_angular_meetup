@@ -1,6 +1,7 @@
 <button mat-raised-button color="accent" (click)="createMeetupHandler()">
   Create meetup
 </button>
+<h1 *ngIf="!meetups.length">No Meetups</h1>
 <app-meetup-item
   *ngFor="let meetup of meetups"
   [meetup]="meetup"
