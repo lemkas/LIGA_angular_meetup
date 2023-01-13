@@ -1,6 +1,6 @@
 export interface IRole {
-  names: [USER_ROLE.USER, USER_ROLE.ADMIN?];
-  userId: number;
+  name: USER_ROLE.USER | USER_ROLE.ADMIN;
+  Id: number;
 }
 
 enum USER_ROLE {

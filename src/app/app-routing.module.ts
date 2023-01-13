@@ -15,13 +15,19 @@ import { CreateFormComponent } from './components/create-form/create-form.compon
 import { MatInputModule } from '@angular/material/input';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserItemComponent } from './components/user-item/user-item.component';
+import { AuthGuard } from './guards/auth.guard';
+import { AdminGuard } from './guards/admin.guard';
 
 const routes: Routes = [
   { path: '', component: AuthComponent },
-  { path: 'meetups', component: MeetupsComponent },
-  { path: 'my-meetups', component: MeetupsComponent },
-  { path: 'users', component: AdminComponent },
-  { path: 'meetups/create', component: CreateMeetupComponent },
+  { path: 'meetups', component: MeetupsComponent, canActivate: [AuthGuard] },
+  { path: 'my-meetups', component: MeetupsComponent, canActivate: [AuthGuard] },
+  { path: 'users', component: AdminComponent, canActivate: [AdminGuard] },
+  {
+    path: 'meetups/create',
+    component: CreateMeetupComponent,
+    canActivate: [AuthGuard],
+  },
 ];
 
 @NgModule({
