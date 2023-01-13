@@ -32,9 +32,17 @@ export class UserItemComponent implements OnInit {
   }
 
   editedUser() {
-    this.updateUserHandler.emit(this.createForm.value);
+    const formData = this.createForm.value;
+    const editedUser = {
+      id: this.user.id,
+      email: formData.email,
+      password: formData.password,
+      fio: formData.fio,
+    };
+
     this.showFormToggle();
     this.createForm.reset();
+    this.updateUserHandler.emit(editedUser);
   }
 
   deletedUser(id: number) {

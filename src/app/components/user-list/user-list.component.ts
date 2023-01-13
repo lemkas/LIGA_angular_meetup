@@ -30,7 +30,7 @@ export class UserListComponent implements OnInit {
   }
 
   editUser(editedUser: IUser) {
-    console.log(editedUser);
+    this.userService.updateUser(editedUser).subscribe();
   }
 
   initForm() {
